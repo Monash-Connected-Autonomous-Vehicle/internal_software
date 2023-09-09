@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import NavBar from './components/Navbar';
 import * as Recruitment from './pages/recruitment_platform/';
 import * as Inventory from './pages/inventory_manager';
 
@@ -7,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <NavBar/>
         <Routes>
           {/* RECRUITMENT PLATFORM ROUTES */}
           <Route path='recruitment' element={<Recruitment.Home/>}>
@@ -18,13 +20,10 @@ function App() {
             <Route path='positions' element={<Recruitment.Positions/>}/>
             <Route path='questions' element={<Recruitment.InterviewQuestions/>}/>
           </Route>
-
           {/* INVENTORY MANAGER ROUTES */}
           <Route path='/inventory' element={<Inventory.Home/>}>
             {/* INVENTORY MANAGER PAGES TODO */}
           </Route>
-
-          {/* ORGANISATIONAL CHART ROUTES TODO */}
         </Routes>
       </Router>
     </div>
