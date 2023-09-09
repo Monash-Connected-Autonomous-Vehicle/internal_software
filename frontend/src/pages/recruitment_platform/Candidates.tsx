@@ -1,7 +1,7 @@
 // @ts-ignore
 import React from 'react';
 
-const PositionsView = () => {
+const Candidates = () => {
 
     return (
         <div>
@@ -9,4 +9,4 @@ const PositionsView = () => {
     )
 }
 
-export default PositionsView;
+export default Candidates;
