@@ -1,7 +1,6 @@
-// @ts-ignore
 import React from 'react';
 
-const Interviewees = () => {
+const Positions = () => {
 
     return (
         <div>
@@ -9,4 +8,4 @@ const Interviewees = () => {
     )
 }
 
-export default Interviewees;
+export default Positions;

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import * as Recruitment from 'pages/recruitment_platform';
-import * as Inventory from 'pages/inventory_manager';
+import * as Recruitment from './pages/recruitment_platform/';
+import * as Inventory from './pages/inventory_manager';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
             <Route path='interview/notes' element={<Recruitment.InterviewNotesMode/>}/>
             <Route path='interview/questions' element={<Recruitment.InterviewQuestionMode/>}/>
             <Route path='positions' element={<Recruitment.Positions/>}/>
-            <Route path='questions' element={<Recruitment.Questions/>}/>
+            <Route path='questions' element={<Recruitment.InterviewQuestions/>}/>
           </Route>
 
           {/* INVENTORY MANAGER ROUTES */}
