@@ -1,31 +1,56 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
-import NavBar from './components/Navbar';
-import * as Recruitment from './pages/recruitment_platform/';
+import ErrorPage from './pages/ErrorPage';
 import * as Inventory from './pages/inventory_manager';
+import * as Recruitment from './pages/recruitment_platform/';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '/recruitment',
+    element: <Recruitment.Home />,
+  },
+  {
+    path: '/recruitment/applicants',
+    element: <Recruitment.Applicants />,
+  },
+  {
+    path: '/recruitment/candidates',
+    element: <Recruitment.Candidates />,
+  },
+  {
+    path: '/recruitment/interviewees',
+    element: <Recruitment.Interviewees />,
+  },
+  {
+    path: '/recruitment/interview/notes',
+    element: <Recruitment.InterviewNotesMode />,
+  },
+  {
+    path: '/recruitment/interview/questions',
+    element: <Recruitment.InterviewQuestionMode />,
+  },
+  {
+    path: '/recruitment/positions',
+    element: <Recruitment.Positions />,
+  },
+  {
+    path: '/recruitment/questions',
+    element: <Recruitment.InterviewQuestions />,
+  },
+  {
+    path: '/inventory',
+    element: <Inventory.Home />,
+  },
+]);
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <NavBar/>
-        <Routes>
-          {/* RECRUITMENT PLATFORM ROUTES */}
-          <Route path='recruitment' element={<Recruitment.Home/>}>
-            <Route path='applicants' element={<Recruitment.Applicants/>}/>
-            <Route path='candidates' element={<Recruitment.Candidates/>}/>
-            <Route path='interviewees' element={<Recruitment.Interviewees/>}/>
-            <Route path='interview/notes' element={<Recruitment.InterviewNotesMode/>}/>
-            <Route path='interview/questions' element={<Recruitment.InterviewQuestionMode/>}/>
-            <Route path='positions' element={<Recruitment.Positions/>}/>
-            <Route path='questions' element={<Recruitment.InterviewQuestions/>}/>
-          </Route>
-          {/* INVENTORY MANAGER ROUTES */}
-          <Route path='/inventory' element={<Inventory.Home/>}>
-            {/* INVENTORY MANAGER PAGES TODO */}
-          </Route>
-        </Routes>
-      </Router>
+      <RouterProvider router={router} />
     </div>
   );
 }
