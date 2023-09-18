@@ -1,30 +1,41 @@
 import React from 'react';
+import NavBar from '../../components/Navbar';
 
 const InterviewQuestionMode = () => {
     return (
-      <div style={{ backgroundColor: 'navy', color: 'white', padding: '20px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <h1>Interview Page</h1>
-          <button onClick={() => window.location.href = '/interview/notes'}>Go to Note-Taking</button>
-        </div>
-        <div>
-          <h2>Question 1</h2>
-          <p>
-            {/* question text */}
-            How many letters in apple
-          </p>
-          {/* images and text related to the question here */}
-          <div>
-            <img src="image_url_here" alt="Question Image" />
-            {/* Add more images and text as needed */}
+        <div style={{ height: '100vh', backgroundColor: '#001633', color: 'white', textAlign: 'center' }}>
+        {/* Render the NavBar component */}
+        <NavBar />
+        <div style={{ padding: '20px' }}>
+          <h1>Interview Question</h1>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '10px' }}>
+            <h2 style={{ margin: '0', marginLeft: '20%' }}>Question 1</h2>
+            <button onClick={() => window.location.href = '/recruitment/interview/notes'}>Note taking mode</button>
           </div>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
-          <button>Previous</button>  {/* take to the next page */}
-          <button>Next</button>
+          <div style={{ textAlign: 'left', maxWidth: '600px', margin: '20px auto' }}>
+            <p>
+              {/* question text */}
+              How many letters in apple
+            </p>
+            {/* image and text for question */}
+            <div style={{ border: '1px solid white', padding: '150px', maxWidth: '800px', margin: '0 auto' }}>
+              <p>Rectangular box with image or text for question goes here</p>
+            </div>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
+            <button>Previous</button>
+            <button>Next</button>
+          </div>
         </div>
       </div>
     );
   };
   
   export default InterviewQuestionMode;
+
+  
+  
+  
+  
+  
+  
